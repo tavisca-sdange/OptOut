@@ -16,6 +16,7 @@
         var r="";
                */
         var r ="";
+        var s="";
         var flag=0;
         var inputElement = document.getElementsByClassName("form-check-input");
         for(i=0;i<inputElement.length;i++)
@@ -29,11 +30,16 @@
        
           
        if(flag=1)
-        document.getElementById("result").innerHTML = "You are sucessfully unsubscribed from "+r+" emails.";
-      else  
-      document.getElementById("result").innerHTML = "You haven't selected any service to be unsubscribed.";
-        
-      //alert(checkedValue);
+       {
+          s="You are sucessfully unsubscribed from "+r+" emails.";
+          document.getElementById("result").innerHTML = "You are sucessfully unsubscribed from "+r+" emails.";
+       }
+       else
+       {  
+          s="You haven't selected any service to be unsubscribed."; 
+          document.getElementById("result").innerHTML = "You haven't selected any service to be unsubscribed.";        
+       }
+      alert(s);
     }
     </script>
   <style>
