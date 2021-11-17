@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+  <title>Unsubscibe from services</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function myFunction() {
+        /*var b = document.getElementById("Birthday");
+        var a = document.getElementById("Anniversary");
+        var p = document.getElementById("Promotional");
+        var u = document.getElementById("Upsell");
+        var r="";
+               */
+        var r ="";
+        var flag=0;
+        var inputElement = document.getElementsByClassName("form-check-input");
+        for(i=0;i<inputElement.length;i++)
+        {
+          if(inputElement[i].checked==true)
+          {
+            r+=inputElement[i].value+" ";
+            flag=1;
+          }
+        }
+       
+          
+       if(flag=1)
+        document.getElementById("result").innerHTML = "You are sucessfully unsubscribed from "+r+" emails.";
+      else  
+      document.getElementById("result").innerHTML = "You haven't selected any service to be unsubscribed.";
+        
+      //alert(checkedValue);
+    }
+    </script>
+  <style>
+    form {
+      margin: 50px;
+    }
+    </style>
+</head>
+    <body>
+        <div class="container"> 
+        <form action="">
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input"  type="checkbox" value="Birthday" id="Emails"> Birthday Emails
+                </label>
+              </div>
+              <div class="form-group form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input"  type="checkbox" value="Anniversary" id="Emails2"> Anniversary Emails
+                </label>
+              </div>
+              <div class="form-group form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input"  type="checkbox" value="Promotional" id="Emails3"> Promotional Emails
+                </label>
+              </div>
+              <div class="form-group form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input"  type="checkbox" value="Upsell" id="Emails4"> Upsell Emails
+                </label>
+            </div>
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary" onclick="myFunction()">Unsubscibe</button>
+              </div>
+          </form>
+          <h4 style="color:green" id="result"></h3> 
+        </div>
+    </body>
+</html>
